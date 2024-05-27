@@ -2,6 +2,7 @@ import React from "react"
 import { footer } from "../../data/Data"
 import "./footer.css"
 
+ const year = new Date().getFullYear()
 const Footer = () => {
   return (
     <>
@@ -33,7 +34,7 @@ const Footer = () => {
           </div>
 
           {footer.map((val) => (
-            <div className='box'>
+            <div className='box' key={val.text}>
               <h3>{val.title}</h3>
               <ul>
                 {val.text.map((items) => (
@@ -45,7 +46,7 @@ const Footer = () => {
         </div>
       </footer>
       <div className='legal'>
-        <span>© 2021 RentUP. Designd By GorkCoder.</span>
+        <span>© {year} RentUP. Designd By Amar.</span>
       </div>
     </>
   )
